@@ -20,6 +20,22 @@ exports.getAllProducts = async (req, res) => {
 };
 
 
+// Get a specific product Details
+exports.getProductDetails = async (req, res, next) => {
+    const product = await ProductData.findById(req.params.id);
+    if (!product) {
+      return res.status(500).json({
+        success: false,
+        message: "Product Not found",
+      });
+    }
+    
+    res.status(200).json({
+      success: true,
+      product,
+    });
+    
+}
 
 
 // Update a specific product -- ADMIN
