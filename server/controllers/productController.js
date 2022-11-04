@@ -1,4 +1,5 @@
 const ProductData = require("../models/productsModel");
+const ErrorHandler = require("../Utils/errorHandler");
 
 // Create Product -- ADMIN
 exports.createProduct = async (req, res, next) => {
@@ -19,35 +20,28 @@ exports.getAllProducts = async (req, res) => {
   });
 };
 
-
 // Get a specific product Details
 exports.getProductDetails = async (req, res, next) => {
-    const product = await ProductData.findById(req.params.id);
-    if (!product) {
-      return res.status(500).json({
-        success: false,
-        message: "Product Not found",
-      });
-    }
-    
-    res.status(200).json({
-      success: true,
-      product,
-    });
-    
-}
+  const product = await ProductData.findById(req.params.id);
 
+  if (!product) {
+    return next(new ErrorHandler("Product Not found", 404));
+  }
+
+  res.status(200).json({
+    success: true,
+    product,
+  });
+};
 
 // Update a specific product -- ADMIN
 exports.updateProduct = async (req, res, next) => {
   let product = await ProductData.findById(req.params.id);
 
   if (!product) {
-    return res.status(500).json({
-      success: false,
-      message: "Product Not found",
-    });
+    return next(new ErrorHandler("Product Not found", 500));
   }
+
   product = await ProductData.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true,
@@ -59,22 +53,18 @@ exports.updateProduct = async (req, res, next) => {
   });
 };
 
-
 // Remove a specific product -- ADMIN
 
 exports.removeProduct = async (req, res, next) => {
-    const product = await ProductData.findById(req.params.id);
-    if (!product) {
-        return res.status(500).json({
-            success: false,
-            message: "Product Not found",
-        });
-    }
+  const product = await ProductData.findById(req.params.id);
 
-    await product.remove();
-    res.status(200).json({
-      success: true,
-      message: "Product Removed Successfully",
-    });
+  if (!product) {
+    return next(new ErrorHandler("Product Not found", 500));
+  }
 
-}
+  await product.remove();
+  res.status(200).json({
+    success: true,
+    message: "Product Removed Successfully",
+  });
+};
