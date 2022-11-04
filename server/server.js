@@ -11,10 +11,20 @@ connectDatabase();
 
 
 const PORT = process.env.port;
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(`server is working on http://localhost:${PORT}`);
 })
 
 
 
 
+// Unhandled Promise Rejection
+process.on("unhandledRejection", err => {
+    console.log(`Error: ${err.message} `);
+    console.log(`Shutting down the ser due to unhandled Promise Rejection`);
+
+    server.close(() => {
+        process.exit(1);
+    })
+
+})
