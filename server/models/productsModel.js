@@ -17,14 +17,9 @@ const productSchema = mongoose.Schema({
     maxLength: [8, `Price can not exceed 8 characters`],
   },
 
-  price: {
-    type: Number,
-    default: 0,
-  },
-
   images: [
     {
-      publicId: {
+      public_Id: {
         type: String,
         required: true,
       },
@@ -37,6 +32,7 @@ const productSchema = mongoose.Schema({
   category: {
     type: String,
     required: [true, `Please enter product Category`],
+    default: " ",
   },
   stock: {
     type: Number,
@@ -63,13 +59,12 @@ const productSchema = mongoose.Schema({
         required: true,
       },
     },
-    ],
-  
-    createdAt: {
-        type: Date,
-        default:Date.now
-  }
+  ],
+
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-
-module.exports = mongoose.model("Product", productSchema)
+module.exports = mongoose.model("Product", productSchema);
