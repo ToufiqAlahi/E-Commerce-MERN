@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
+const bcrypt = require("bcryptjs");
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -13,7 +14,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, `Please Enter Your Email`],
     unique: true,
-    validator: [validator.isEmail, `Please Enter a Valid Email`],
+    validate: [validator.isEmail, `Please Enter a Valid Email`],
   },
 
   password: {
@@ -41,7 +42,15 @@ const userSchema = new mongoose.Schema({
 
   resetPasswordToken: String,
   resetPasswordExpire: Date,
+});
 
+userSchema.pre("save", async function (next) {
+  
+  if (!this.isModified("password")) { // * if password isn't updated, skip hashing and go to next
+    next();
+  }
+
+  this.password = await bcrypt.hash(this.password, 10);
 });
 
 module.exports = mongoose.model("user", userSchema);
