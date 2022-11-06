@@ -13,10 +13,10 @@ exports.createProduct = catchAsyncError(async (req, res, next) => {
 });
 
 // Get All Product
-
 exports.getAllProducts = catchAsyncError(async (req, res) => {
-
- const apiFeatures= new ApiFeatures(ProductData.find(), req.query).search();
+  const apiFeatures = new ApiFeatures(ProductData.find(), req.query)
+    .search()
+    .filter();
 
   const products = await apiFeatures.query;
   res.status(200).json({
@@ -59,7 +59,6 @@ exports.updateProduct = catchAsyncError(async (req, res, next) => {
 });
 
 // Remove a specific product -- ADMIN
-
 exports.removeProduct = catchAsyncError(async (req, res, next) => {
   const product = await ProductData.findById(req.params.id);
 
