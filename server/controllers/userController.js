@@ -13,8 +13,13 @@ exports.createUser = catchAsyncError(async (req, res, next) => {
             url: "Profile pic url ",
         }
     });
+
+    const token = user.getJWTToken();
+
+
     res.status(201).json({
         success: true,
         user,
+        token,
     })
 })
