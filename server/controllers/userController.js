@@ -16,7 +16,7 @@ exports.createUser = catchAsyncError(async (req, res, next) => {
     },
   });
 
- sendToken(user, 201, res);
+  sendToken(user, 201, res);
 });
 
 // User Login
@@ -43,5 +43,19 @@ exports.logInUser = catchAsyncError(async (req, res, next) => {
     return next(new ErrorHandler(" Invalid Email or password", 401));
   }
 
-    sendToken(user, 200, res);
+  sendToken(user, 200, res); 
+});
+
+// Logout user
+
+exports.logout = catchAsyncError(async (req, res, next) => {
+  res.cookie("token", null, {
+    expires: new Date(Date.now()),
+    httpOnly: true,
+  });
+
+  res.status(200).json({
+    success: true,
+    message: "Logged out Successfully",
+  });
 });
