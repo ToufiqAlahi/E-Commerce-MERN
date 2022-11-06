@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, `Please Enter Your Password`],
-    select: false,
+    // select: false,
     minLength: [8, `Password must be at least 8 characters`],
   },
 
@@ -46,8 +46,8 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.pre("save", async function (next) {
-  
-  if (!this.isModified("password")) { // * if password isn't updated, skip hashing and go to next
+  if (!this.isModified("password")) {
+    // * if password isn't updated, skip hashing and go to next
     next();
   }
 
@@ -60,8 +60,12 @@ userSchema.methods.getJWTToken = function () {
   return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRE,
   });
-}
+};
 
+// Compare Password
 
+userSchema.methods.comparePassword = async function (password) {
+  return await bcrypt.compare(password, this.password);
+};
 
-module.exports = mongoose.model("user", userSchema);
+module.exports = mongoose.model("User", userSchema);
