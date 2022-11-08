@@ -112,7 +112,7 @@ exports.createProductReview = catchAsyncError(async (req, res, next) => {
   let avg = 0;
 
   product.reviews.forEach((rev) => {
-    avg = avg + rev.rating;
+    avg += rev.rating;
   });
 
   product.ratings = avg / product.reviews.length;
