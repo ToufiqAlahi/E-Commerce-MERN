@@ -16,10 +16,14 @@ const productSchema = new mongoose.Schema({
     required: [true, `please Enter the Product Price`],
     maxLength: [8, `Price can not exceed 8 characters`],
   },
+  ratings: {
+    type: Number,
+    default: 0,
+  },
 
   images: [
     {
-      public_Id: {
+      public_id: {
         type: String,
         required: true,
       },
@@ -47,12 +51,18 @@ const productSchema = new mongoose.Schema({
 
   reviews: [
     {
+      user: {
+        type: mongoose.Schema.ObjectId,
+        ref: "User",
+        required: true,
+      },
       name: {
         type: String,
         required: true,
       },
       rating: {
         type: Number,
+        required: true,
       },
       comment: {
         type: String,
@@ -63,9 +73,9 @@ const productSchema = new mongoose.Schema({
 
   user: {
     type: mongoose.Schema.ObjectId,
-    ref: "user",
+    ref: "User",
     required: true,
-},
+  },
 
   createdAt: {
     type: Date,
