@@ -168,7 +168,7 @@ exports.updateProfile = catchAsyncError(async (req, res, next) => {
     // add cloudinary later for AVATAR
   };
 
-  const user = User.findByIdAndUpdate(req.user.id, newUserData, {
+  const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
     new: true,
     runValidators: true,
     useFindAndModify: false,
@@ -178,3 +178,5 @@ exports.updateProfile = catchAsyncError(async (req, res, next) => {
     success: true,
   });
 });
+
+
