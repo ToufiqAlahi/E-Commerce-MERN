@@ -3,7 +3,7 @@ const catchAsyncError = require("../Middleware/catchAsyncError");
 const User = require("../models/userModels");
 const sendToken = require("../Utils/jwtToken");
 const sendEmail = require("../Utils/sendEmail");
-
+const crypto = require("crypto");
 
 // User Registration:
 exports.createUser = catchAsyncError(async (req, res, next) => {
@@ -79,24 +79,53 @@ exports.forgotPassword = catchAsyncError(async (req, res, next) => {
 
   const message = `Your password reset token is : \n \n ${resetPasswordUrl} \n \n If you haven't requested this, please ignore this. `;
 
-    try {
-        await sendEmail({
-            email: user.email,
-            subject: `E-commerce Password Recovery`,
-            message,
-            
-        })
+  try {
+    await sendEmail({
+      email: user.email,
+      subject: `E-commerce Password Recovery`,
+      message,
+    });
 
-        res.status(200).json({
-            success: true,
-            message:`Email sent to ${user.email} successfully! `
-        })
-        
-
+    res.status(200).json({
+      success: true,
+      message: `Email sent to ${user.email} successfully! `,
+    });
   } catch (error) {
     user.resetPasswordToken = undefined;
-      user.resetPasswordExpire = undefined;
-      await user.save({ validateBeforeSave: false });
-      return next (new ErrorHandler (error.message, 500) )
+    user.resetPasswordExpire = undefined;
+
+    await user.save({ validateBeforeSave: false });
+    return next(new ErrorHandler(error.message, 500));
   }
+});
+
+//Reset password:
+exports.resetPassword = catchAsyncError(async (req, res, next) => {
+  // Hashing token
+  const resetPasswordToken = crypto
+    .createHash("sha256")
+    .update(req.params.token)
+    .digest("hex");
+
+  const user = await User.findOne({
+    resetPasswordToken,
+    resetPasswordExpire: { $gt: Date.now() },
+  });
+
+  if (!user) {
+    return next(
+      new ErrorHandler("Reset password token is invalid or has expired", 400)
+    );
+  }
+  if (req.body.password !== req.body.confirmPassword) {
+    return next(new ErrorHandler("Password does not match", 400));
+  }
+
+  user.password = req.body.password;
+  user.resetPasswordToken = undefined;
+  user.resetPasswordExpire = undefined;
+
+  await user.save();
+
+  sendToken(user, 200, res);
 });
