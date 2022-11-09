@@ -149,7 +149,7 @@ exports.deleteReviews = catchAsyncError(async (req, res, next) => {
   }
 
   const reviews = product.reviews.filter(
-    (rev) => rev._id.toString() !== req.query.toString()
+    (rev) => rev._id.toString() !== req.query.id.toString()
   );
 
   let avg = 0;
@@ -162,7 +162,7 @@ exports.deleteReviews = catchAsyncError(async (req, res, next) => {
 
   const numOfReviews = reviews.length;
 
-  await product.findByIdAndUpdate(
+  await Product.findByIdAndUpdate(
     req.query.productId,
     {
       reviews,
@@ -172,7 +172,7 @@ exports.deleteReviews = catchAsyncError(async (req, res, next) => {
     {
       new: true,
       runValidators: true,
-      useFindAndModify:false,
+      useFindAndModify: false,
     }
   );
 
