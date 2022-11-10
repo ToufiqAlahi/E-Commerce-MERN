@@ -34,7 +34,7 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
 });
 
 
-// get Single Order info: 
+// get Single Order info:
 exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
   const order = await Order.findById(req.params.id).populate(
     "user",
@@ -48,5 +48,16 @@ exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
   res.status(200).json({
     success: true,
     order,
+  });
+});
+
+
+// get LoggedIn user's Order info: 
+exports.myOrders = catchAsyncErrors(async (req, res, next) => {
+  const orders = await Order.find({ user: req.user._id });
+
+  res.status(200).json({
+    success: true,
+    orders,
   });
 });
