@@ -33,7 +33,6 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-
 // get Single Order info:
 exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
   const order = await Order.findById(req.params.id).populate(
@@ -51,13 +50,30 @@ exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-
-// get LoggedIn user's Order info: 
+// get LoggedIn user's Order info:
 exports.myOrders = catchAsyncErrors(async (req, res, next) => {
   const orders = await Order.find({ user: req.user._id });
 
   res.status(200).json({
     success: true,
+    orders,
+  });
+});
+
+
+// get all Orders -- Admin
+exports.getAllOrders = catchAsyncErrors(async (req, res, next) => {
+  const orders = await Order.find();
+
+  let totalAmount = 0;
+
+  orders.forEach((order) => {
+    totalAmount += order.totalPrice;
+  });
+
+  res.status(200).json({
+    success: true,
+    totalAmount,
     orders,
   });
 });
