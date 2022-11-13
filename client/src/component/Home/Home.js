@@ -5,6 +5,7 @@ import "./Home.css";
 import ProductCard from "./ProductCard.js";
 import { clearErrors, getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
+import Loader from "../layout/Loader/Loader";
 
 // const products = { // * Dummy Data
 //   name: "Green Suit",
@@ -28,27 +29,33 @@ const Home = () => {
 
   return (
     <Fragment>
-      <MetaData title="ShopZo" />
+      {loading ? (
+        <Loader />
+      ) : (
+        <Fragment>
+          <MetaData title="ECOMMERCE" />
 
-      <div className="banner">
-        <p>Welcome to Shopzo</p>
-        <h1>FIND AMAZING PRODUCTS BELOW</h1>
+          <div className="banner">
+            <p>Welcome to Ecommerce</p>
+            <h1>FIND AMAZING PRODUCTS BELOW</h1>
 
-        <a href="#container">
-          <button>
-            Scroll <CgMouse />
-          </button>
-        </a>
-      </div>
+            <a href="#container">
+              <button>
+                Scroll <CgMouse />
+              </button>
+            </a>
+          </div>
 
-      <h2 className="homeHeading">Featured Products</h2>
+          <h2 className="homeHeading">Featured Products</h2>
 
-      <div className="container" id="container">
-        {products &&
-          products.map((product) => (
-            <ProductCard key={product._id} product={product} />
-          ))}
-      </div>
+          <div className="container" id="container">
+            {products &&
+              products.map((product) => (
+                <ProductCard key={product._id} product={product} />
+              ))}
+          </div>
+        </Fragment>
+      )}
     </Fragment>
   );
 };
