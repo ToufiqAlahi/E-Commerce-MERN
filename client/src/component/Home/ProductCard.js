@@ -12,7 +12,7 @@ const ProductsCard = ({ products }) => {
   };
 
   return (
-    <Link className="productsCard" to={products._id}>
+    <Link className="productCard" to={products._id}>
       <img src={products.images[0].url} alt={products.name} />
       <p>{products.name}</p>
 

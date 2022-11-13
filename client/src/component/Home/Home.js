@@ -11,7 +11,7 @@ const Home = () => {
       name: "Green Suit",
       images: [
         {
-          url: "https://images.unsplash.com/photo-1593032465175-481ac7f401a0?&w=880&q=50",
+          url: "https://images.unsplash.com/photo-1593032465175-481ac7f401a0?&w=220&q=50",
         },
       ],
       price: "$7000",
