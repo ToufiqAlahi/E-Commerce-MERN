@@ -5,26 +5,27 @@ import WebFont from "webfontloader";
 import { useEffect } from "react";
 import Footer from "./component/layout/Footer/Footer";
 import Home from "./component/Home/Home.js";
+import ProductDetails from "./component/Product/ProductDetails.js";
 function App() {
-
-   useEffect(() => {
-     WebFont.load({
-       google: {
-         families: ["Roboto", "Droid Sans", "Chilanka"],
-       },
-     });
-
-     
-   }, []);
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ["Roboto", "Droid Sans", "Chilanka"],
+      },
+    });
+  }, []);
 
   return (
     <Router>
       <Header />
       <Routes>
-      <Route path="/" element={<Home/>} />
-     </Routes>
+        <Route path="/" element={<Home />} />
 
-      <Footer/>
+        <Route path="/product/:id" element={<ProductDetails />} />
+        
+      </Routes>
+
+      <Footer />
     </Router>
   );
 }
