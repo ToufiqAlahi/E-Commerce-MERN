@@ -1,8 +1,24 @@
 import React, { Fragment } from "react";
 import { CgMouse } from "react-icons/all";
 import "./Home.css";
+import ProductCard from "./ProductCard.js";
+
+
 
 const Home = () => {
+
+    const products = {
+      name: "Green Suit",
+      images: [
+        {
+          url: "https://images.unsplash.com/photo-1593032465175-481ac7f401a0?&w=880&q=50",
+        },
+      ],
+      price: "$7000",
+      _id: "Toufiq",
+    };
+
+
   return (
     <Fragment>
       <div className="banner">
@@ -16,7 +32,13 @@ const Home = () => {
         </a>
       </div>
 
-          <h2 className="homeHeading">Featured Products</h2>
+      <h2 className="homeHeading">Featured Products</h2>
+
+      <div className="container" id="container">
+        
+            <ProductCard products={products} />
+       
+          </div>
           
     </Fragment>
   );
