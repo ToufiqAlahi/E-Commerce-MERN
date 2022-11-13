@@ -5,8 +5,8 @@ import ReactStars from "react-rating-stars-component";
 const ProductsCard = ({ products }) => {
   const options = {
     edit: "false",
-    color: "rgba(20,20,20,0.1)",
-    activeColor: "tomato",
+    color: "rgba(20,20,20,0.3)",
+    activeColor: "gold",
     value: 3.5,
     isHalf: true,
   };
@@ -18,7 +18,7 @@ const ProductsCard = ({ products }) => {
 
       <div>
         <ReactStars {...options} />
-        <span className="productsCardSpan">(188 Reviews)</span>
+         <span className="productsCardSpan"> (188 Reviews)</span>
       </div>
       <span>{products.price}</span>
     </Link>
