@@ -37,6 +37,15 @@ const Home = () => {
       <div className="container" id="container">
         
             <ProductCard products={products} />
+            <ProductCard products={products} />
+            <ProductCard products={products} />
+            <ProductCard products={products} />
+            <ProductCard products={products} />
+            <ProductCard products={products} />
+            <ProductCard products={products} />
+            <ProductCard products={products} />
+            <ProductCard products={products} />
+            <ProductCard products={products} />
        
           </div>
           
