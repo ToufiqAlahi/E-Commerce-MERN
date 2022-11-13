@@ -6,6 +6,7 @@ import ProductCard from "./ProductCard.js";
 import { clearErrors, getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../layout/Loader/Loader";
+import { useAlert } from "react-alert";
 
 // const products = { // * Dummy Data
 //   name: "Green Suit",
@@ -17,15 +18,21 @@ import Loader from "../layout/Loader/Loader";
 //   price: "$7000",
 //   _id: "Toufiq",
 // };
-const Home = () => {
-  const dispatch = useDispatch();
- const { loading, error, products, productsCount } = useSelector(
-   (state) => state.products
- );
-  useEffect(() => {
-    dispatch(getProduct());
-  }, [dispatch]);
 
+const Home = () => {
+  const alert = useAlert();
+  const dispatch = useDispatch();
+  const { loading, error, products, productsCount } = useSelector(
+    (state) => state.products
+  );
+
+  useEffect(() => {
+    if (error) {
+      alert.error(error);
+      dispatch(clearErrors());
+    }
+    dispatch(getProduct());
+  }, [dispatch , error]);
 
   return (
     <Fragment>
@@ -33,10 +40,10 @@ const Home = () => {
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title="ECOMMERCE" />
+          <MetaData title="SHOPZO" />
 
           <div className="banner">
-            <p>Welcome to Ecommerce</p>
+            <p>Welcome to SHOPZO</p>
             <h1>FIND AMAZING PRODUCTS BELOW</h1>
 
             <a href="#container">
