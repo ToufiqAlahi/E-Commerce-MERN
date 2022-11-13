@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <Fragment>
-      <MetaData title="Home page is working" />
+      <MetaData title="ShopZo" />
 
       <div className="banner">
         <p>Welcome to Shopzo</p>
