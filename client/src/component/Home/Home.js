@@ -1,20 +1,30 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { CgMouse } from "react-icons/all";
 import MetaData from "../layout/MetaData";
 import "./Home.css";
 import ProductCard from "./ProductCard.js";
+import { clearErrors, getProduct } from "../../actions/productAction";
+import { useSelector, useDispatch } from "react-redux";
 
+// const products = { // * Dummy Data
+//   name: "Green Suit",
+//   images: [
+//     {
+//       url: "https://images.unsplash.com/photo-1593032465175-481ac7f401a0?&w=220&q=50",
+//     },
+//   ],
+//   price: "$7000",
+//   _id: "Toufiq",
+// };
 const Home = () => {
-  const products = {
-    name: "Green Suit",
-    images: [
-      {
-        url: "https://images.unsplash.com/photo-1593032465175-481ac7f401a0?&w=220&q=50",
-      },
-    ],
-    price: "$7000",
-    _id: "Toufiq",
-  };
+  const dispatch = useDispatch();
+ const { loading, error, products, productsCount } = useSelector(
+   (state) => state.products
+ );
+  useEffect(() => {
+    dispatch(getProduct());
+  }, [dispatch]);
+
 
   return (
     <Fragment>
@@ -34,16 +44,10 @@ const Home = () => {
       <h2 className="homeHeading">Featured Products</h2>
 
       <div className="container" id="container">
-        <ProductCard products={products} />
-        <ProductCard products={products} />
-        <ProductCard products={products} />
-        <ProductCard products={products} />
-        <ProductCard products={products} />
-        <ProductCard products={products} />
-        <ProductCard products={products} />
-        <ProductCard products={products} />
-        <ProductCard products={products} />
-        <ProductCard products={products} />
+        {products &&
+          products.map((product) => (
+            <ProductCard key={product._id} product={product} />
+          ))}
       </div>
     </Fragment>
   );
