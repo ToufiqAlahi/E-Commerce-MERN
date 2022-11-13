@@ -1,11 +1,8 @@
-import React from 'react'
+import React from "react";
 import playStore from "../../../images/playstore.png";
 import appStore from "../../../images/Appstore.png";
+import FooterLogo from "../../../images/footer.svg";
 import "./Footer.css";
-
-
-
-
 
 const Footer = () => {
   return (
@@ -18,12 +15,15 @@ const Footer = () => {
       </div>
 
       <div className="midFooter">
-        <h1>SHOPZO</h1>
-        <p>Quality is our first priority</p>
-
-        <p>
-          Copyrights 2022  &copy;
-          <a className='profile-link'
+        {/* <h1>SHOPZO</h1> */}
+        <div>
+          <img className="footer-logo" src={FooterLogo} alt="Shopzo Logo" />
+          <p>Your Shopping paradise</p>
+        </div>
+        <p className="copyrights">
+          Copyrights 2022 &copy;
+          <a
+            className="profile-link"
             target="_blank"
             rel="noopener noreferrer"
             href="https://toufiq-alahi.netlify.app/"
@@ -66,6 +66,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-}
+};
 
-export default Footer
+export default Footer;
