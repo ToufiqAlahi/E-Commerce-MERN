@@ -3,16 +3,26 @@ import Carousel from "react-material-ui-carousel";
 import "./ProductDetails.css";
 import { useSelector, useDispatch } from "react-redux";
 import { getProductDetails } from "../../actions/productAction";
+import { Rating } from "@mui/material";
 
 const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
 
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
-    );
-    
+  );
 
-    useEffect(() => {
+    const options = {
+      size: "large",
+      value: product.ratings,
+      readOnly: true,
+      precision: 0.5,
+  };
+  
+
+  
+
+  useEffect(() => {
     dispatch(getProductDetails(match.params.id));
   }, [dispatch, match.params.id]);
 
@@ -32,6 +42,22 @@ const ProductDetails = ({ match }) => {
               ))}
           </Carousel>
         </div>
+
+        <div>
+          <div className="detailsBlock-1">
+            <h2>{product.name}</h2>
+            <p>Product # {product._id}</p>
+          </div>
+          <div className="detailsBlock-2">
+            <Rating {...options} />
+            <span className="detailsBlock-2-span">
+              {" "}
+              ({product.numOfReviews} Reviews)
+            </span>
+          </div>
+        </div>
+
+
       </div>
     </Fragment>
   );
