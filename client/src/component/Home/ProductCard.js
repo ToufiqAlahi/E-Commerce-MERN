@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ReactStars from "react-rating-stars-component";
+// import ReactStars from "react-rating-stars-component";
+import { Rating } from "@material-ui/lab";
 import { productsReducer } from "../../reducers/productReducer";
 
 const ProductsCard = ({ product }) => {
@@ -18,7 +19,7 @@ const ProductsCard = ({ product }) => {
       <p>{product.name}</p>
 
       <div>
-        <ReactStars {...options} />
+        <Rating {...options} />
         <span className="productsCardSpan">
           {" "}
           ({product.numOfReviews} Reviews)
