@@ -9,12 +9,14 @@
   padding: 0;
 }
 .sidebar > a > img {
-  width: 100%;
+  margin-left: 1vmax;
+  width: 75%;
   transition: all 0.5s;
+  margin-top: 5vmax ;
 }
 
 .sidebar > a > img:hover {
-  filter: drop-shadow(0 0 10px #8b38c6);
+  filter: drop-shadow(0 0 10px #069a8e);
 }
 .sidebar a {
   text-decoration: none;
@@ -24,7 +26,7 @@
   transition: all 0.5s;
 }
 .sidebar a:hover {
-  color: #8b38c6;
+  color: #069a8e;
   transform: scale(1.1);
 }
 
