@@ -10,8 +10,21 @@ const Footer = () => {
       <div className="leftFooter">
         <h4>DOWNLOAD SHOPZO APP</h4>
         {/* <p>Download App for Android and IOS mobile phone</p> */}
-        <img src={playStore} alt="playstore" />
-        <img src={appStore} alt="Appstore" />
+        <a
+          href="https://play.google.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={playStore} alt="playstore" />
+        </a>
+        
+        <a
+          href="https://www.apple.com/app-store/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={appStore} alt="Appstore" />
+        </a>
       </div>
 
       <div className="midFooter">
