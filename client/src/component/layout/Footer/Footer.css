@@ -1,5 +1,4 @@
 footer {
-    
   margin-top: 10vmax;
   padding: 2vmax;
   background-color: rgba(81, 81, 81, 0.933);
@@ -7,8 +6,6 @@ footer {
   display: flex;
   align-items: center;
 }
-
-
 
 .leftFooter {
   width: 20%;
@@ -37,11 +34,9 @@ footer {
   text-align: center;
 }
 
-
-.footer-logo{
-max-width: 25vmax;
-/* margin-bottom: 4vmax; */
-
+.footer-logo {
+  max-width: 25vmax;
+  /* margin-bottom: 4vmax; */
 }
 
 .midFooter > p {
