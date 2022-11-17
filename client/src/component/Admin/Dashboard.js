@@ -45,7 +45,7 @@ const Dashboard = () => {
     datasets: [
       {
         label: "TOTAL AMOUNT",
-        backgroundColor: ["#8b38c6"],
+        backgroundColor: ["#069A8E"],
         hoverBackgroundColor: ["rgb(197, 72, 49)"],
         data: [0, totalAmount],
       },
@@ -79,7 +79,7 @@ const Dashboard = () => {
           </div>
           <div className="dashboardSummaryBox2">
             <Link to="/admin/products">
-              <p>Product</p>
+              <p>Products</p>
               <p>{products && products.length}</p>
             </Link>
             <Link to="/admin/orders">

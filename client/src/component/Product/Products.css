@@ -59,7 +59,7 @@
 }
 
 .pageItemActive {
-  background-color: #8b38c6;
+  background-color: #069a8e;
 }
 
 .pageLinkActive {
@@ -86,7 +86,7 @@
   transition: all 0.5s;
 }
 .category-link:hover {
-  color: #8b38c6;
+  color: #069a8e;
 }
 
 .filterBox > fieldset {

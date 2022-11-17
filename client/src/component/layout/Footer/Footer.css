@@ -23,7 +23,7 @@ footer {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-.leftFooter > img {
+.leftFooter > a > img {
   width: 10vmax;
   margin: 1vmax;
   cursor: pointer;
@@ -72,7 +72,7 @@ footer {
   text-decoration: none;
   margin-left: 5px;
   font-family: "Roboto";
-  color: #8b38c6;
+  color: #069a8e;
 }
 
 .rightFooter > a {
@@ -85,5 +85,5 @@ footer {
 }
 
 .rightFooter > a:hover {
-  color: #8b38c6;
+  color: #069a8e;
 }

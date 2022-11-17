@@ -26,7 +26,7 @@ const UserOptions = ({ user }) => {
     {
       icon: (
         <ShoppingCartIcon
-          style={{ color: cartItems.length > 0 ? "#8b38c6" : "unset" }}
+          style={{ color: cartItems.length > 0 ? "#069A8E" : "unset" }}
         />
       ),
       name: `Cart(${cartItems.length})`,

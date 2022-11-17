@@ -37,7 +37,7 @@
 
 .profileContainer > div:first-child > a {
   border: none;
-  background-color: #8b38c6;
+  background-color: #069a8e;
   font: 400 1vmax "Roboto";
   color: white;
   text-decoration: none;
@@ -49,7 +49,7 @@
 }
 
 .profileContainer > div:first-child > a:hover {
-  background-color: rgb(204, 78, 56);
+  background-color: #069A8E;
 }
 
 .profileContainer > div:last-child {
