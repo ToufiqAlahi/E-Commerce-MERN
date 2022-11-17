@@ -8,7 +8,7 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
 const About = () => {
   const visitLinkedIn = () => {
-    window.location = "https://www.linkedin.com/in/toufiq-alahi/";
+    window.location = "https://toufiq-alahi.netlify.app/";
   };
   return (
     <div className="aboutSection">
@@ -26,7 +26,7 @@ const About = () => {
             />
             <Typography>Toufiq Alahi</Typography>
             <Button onClick={visitLinkedIn} color="primary">
-              Visit My LinkedIn
+              Visit My Portfolio Website
             </Button>
 
             <span>
