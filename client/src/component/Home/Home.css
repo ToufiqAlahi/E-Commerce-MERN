@@ -15,7 +15,7 @@
 .banner > h1 {
   margin: 5vmax;
 
-  font: 700 2.5vmax "Roboto";
+  font: 600 2.5vmax "Roboto";
 }
 
 .banner > p {
@@ -34,7 +34,7 @@
   font: 500 1vmax "Roboto";
 }
 .banner > a > button:hover {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0);
   color: white;
 }
 
@@ -49,7 +49,6 @@
   clip-path: polygon(100% 68%, 0 100%, 100% 100%);
   max-width: 100%;
 }
-
 
 .homeHeading {
   text-align: center;
@@ -71,9 +70,8 @@
   max-width: 100%;
 }
 
-
 .productCard {
-  width: 14vmax;
+width: 14vmax;
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -90,7 +88,6 @@
 
 .productCard > img {
   width: 14vmax;
-  
 }
 
 .productCard > div {
