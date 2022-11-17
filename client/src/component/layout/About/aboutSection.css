@@ -14,9 +14,9 @@
 
 .aboutSectionGradient {
   background-image: linear-gradient(
-    to bottom right,
-    rgb(78, 81, 255),
-    rgb(74, 137, 189)
+    to top right,
+    #ace2d9,
+   #024747
   );
 }
 
@@ -37,8 +37,9 @@
 
 .aboutSectionContainer > h1 {
   font: 400 3vmax "Roboto";
-  color: #8b38c6;
+  color: #069a8e;
   margin: 2vmax;
+  border-bottom: #069A8E 1px solid;
 }
 
 .aboutSectionContainer > div {
@@ -105,7 +106,7 @@
 /**Icon Hover Effect 1**/
 .hover-effect1 {
   min-height: 15vmax;
-  background: #f44336;
+  background: transparent;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -131,17 +132,17 @@
 .hover-effect1 ul li a {
   /* font-size: 40px; */
   /* line-height: 100px; */
-  color: #fff;
+  /* color: #fff; */
   margin: 0px 1rem;
   display: inline-block;
   width: 100px;
   height: 100px;
-  background: #b71c1c;
-  -webkit-transition: all 0.6s ease;
-  -moz-transition: all 0.6s ease;
-  -ms-transition: all 0.6s ease;
-  -o-transition: all 0.6s ease;
-  transition: all 0.6s ease;
+  background: #c5ddd9;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
   position: relative;
 }
 .hover-effect1 ul li a svg {
@@ -152,7 +153,7 @@
 
 .hover-effect1 ul li:hover a {
   border-radius: 50%;
-  background: #b71c1c;
+  background: #069A8E;
   -moz-transform: rotate(360deg);
   -webkit-transform: rotate(360deg);
   -o-transform: rotate(360deg);
