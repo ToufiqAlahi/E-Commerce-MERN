@@ -6,6 +6,9 @@
 body {
   cursor: url("./images/cursor.png"), auto;
 }
+button, input, form, a, link , a>img {
+  cursor: url("./images/select.png"), auto !important;
+}
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
