@@ -72,7 +72,7 @@ footer {
   text-decoration: none;
   margin-left: 5px;
   font-family: "Roboto";
-  color: #eb4034;
+  color: #8b38c6;
 }
 
 .rightFooter > a {
@@ -85,5 +85,5 @@ footer {
 }
 
 .rightFooter > a:hover {
-  color: #eb4034;
+  color: #8b38c6;
 }

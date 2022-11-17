@@ -37,7 +37,7 @@
 
 .aboutSectionContainer > h1 {
   font: 400 3vmax "Roboto";
-  color: tomato;
+  color: #8b38c6;
   margin: 2vmax;
 }
 
@@ -194,27 +194,16 @@
     margin: 2vmax;
   }
 
+  /* =========== */
 
-
-/* =========== */
-
-
-.hover-effect1 ul li a {
- 
-  width: 50px;
-  height: 50px;
-  
-}
-
-
-
-
-
-
+  .hover-effect1 ul li a {
+    width: 50px;
+    height: 50px;
+  }
 
   .hover-effect1 ul li a svg {
-  font-size: 30px;
-  justify-self: center;
-  margin: .5rem;
-}
+    font-size: 30px;
+    justify-self: center;
+    margin: 0.5rem;
+  }
 }
