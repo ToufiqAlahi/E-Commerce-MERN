@@ -48,7 +48,8 @@ const Cart = ({ history }) => {
         <Fragment>
           <div className="cartPage">
             <div className="cartHeader">
-              <p>Product</p>
+              {cartItems.length > 1 ? <p>Products</p> : <p>Product</p>}
+
               <p>Quantity</p>
               <p>Subtotal</p>
             </div>
