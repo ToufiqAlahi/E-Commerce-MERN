@@ -5,10 +5,60 @@ import { clearErrors, getProduct } from "../../actions/productAction";
 import Loader from "../layout/Loader/Loader";
 import ProductCard from "../Home/ProductCard";
 import Pagination from "react-js-pagination";
-import Slider from "@material-ui/core/Slider";
 import { useAlert } from "react-alert";
-import Typography from "@material-ui/core/Typography";
 import MetaData from "../layout/MetaData";
+
+import { withStyles, makeStyles } from "@material-ui/core/styles";
+import Slider from "@material-ui/core/Slider";
+import Typography from "@material-ui/core/Typography";
+import Tooltip from "@material-ui/core/Tooltip";
+
+const AirbnbSlider = withStyles({
+  root: {
+    color: "#3a8589",
+    height: 3,
+    padding: "13px 0",
+  },
+  thumb: {
+    height: 27,
+    width: 27,
+    backgroundColor: "#fff",
+    border: "1px solid currentColor",
+    marginTop: -12,
+    marginLeft: -13,
+    boxShadow: "#ebebeb 0 2px 2px",
+    "&:focus, &:hover, &$active": {
+      boxShadow: "#ccc 0 2px 3px 1px",
+    },
+    "& .bar": {
+      // display: inline-block !important;
+      height: 9,
+      width: 1,
+      backgroundColor: "currentColor",
+      marginLeft: 1,
+      marginRight: 1,
+    },
+  },
+  active: {},
+  track: {
+    height: 3,
+  },
+  rail: {
+    color: "#d8d8d8",
+    opacity: 1,
+    height: 3,
+  },
+})(Slider);
+
+function AirbnbThumbComponent(props) {
+  return (
+    <span {...props}>
+      <span className="bar" />
+      <span className="bar" />
+      <span className="bar" />
+    </span>
+  );
+}
 
 const categories = [
   "Laptop",
@@ -47,6 +97,7 @@ const Products = ({ match }) => {
   };
 
   const priceHandler = (event, newPrice) => {
+    event.preventDefault();
     setPrice(newPrice);
   };
   let count = filteredProductsCount;
@@ -77,15 +128,29 @@ const Products = ({ match }) => {
           </div>
 
           <div className="filterBox">
-            <Typography>Price</Typography>
-            <Slider
+            <fieldset style={{ marginBottom: "2rem" }}>
+              <Typography component="legend">
+                Price Range:
+              </Typography>
+              <Slider
+                value={price}
+                onChange={priceHandler}
+                valueLabelDisplay="auto"
+                aria-labelledby="range-slider"
+                min={0}
+                max={9999}
+              />
+            </fieldset>
+            {/* <AirbnbSlider
+              ThumbComponent={AirbnbThumbComponent}
               value={price}
               onChange={priceHandler}
-              valueLabelDisplay="auto"
+              valueLabelDisplay="on"
               aria-labelledby="range-slider"
               min={0}
-              max={25000}
-            />
+              max={9999}
+              defaultValue={[0, 40000]}
+            /> */}
 
             <Typography>Categories</Typography>
             <ul className="categoryBox">
@@ -100,8 +165,10 @@ const Products = ({ match }) => {
               ))}
             </ul>
 
-            <fieldset>
-              <Typography component="legend">Ratings Above</Typography>
+            <fieldset style={{ marginTop: "2rem" }}>
+              <Typography  component="legend">
+                Ratings Above: 
+              </Typography>
               <Slider
                 value={ratings}
                 onChange={(e, newRating) => {
