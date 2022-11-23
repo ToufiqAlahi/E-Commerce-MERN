@@ -1,23 +1,23 @@
 {
   "name": "e-commerce-mern",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/server.js",
-    "dev": "nodemon server/server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ToufiqAlahi/E-Commerce-MERN.git"
   },
- "author": "",
-"license": "ISC",
-"bugs": {
-  "url": "https://github.com/ToufiqAlahi/E-Commerce-MERN/issues"
-},
-"homepage": "https://github.com/ToufiqAlahi/E-Commerce-MERN#readme",
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ToufiqAlahi/E-Commerce-MERN/issues"
+  },
+  "homepage": "https://github.com/ToufiqAlahi/E-Commerce-MERN#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -31,5 +31,6 @@
     "nodemailer": "^6.6.3",
     "stripe": "^8.174.0",
     "validator": "^13.6.0"
-  }
+  },
+  "devDependencies": {}
 }

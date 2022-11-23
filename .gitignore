@@ -21,6 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-server/config/.env
-server/routes/test.json
+./config/.env
+./routes/test.json
 *.env
