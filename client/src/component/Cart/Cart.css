@@ -10,7 +10,7 @@
 }
 .emptyCart > svg {
   font-size: 5vmax;
-  color: #069a8e;
+  color: #5428d5;
 }
 .emptyCart > p {
   font-size: 2vmax;
@@ -30,7 +30,7 @@
 }
 
 .cartHeader {
-  background-color: #069a8e;
+  background-color: #5428d5;
   width: 90%;
   box-sizing: border-box;
   margin: auto;
@@ -98,7 +98,7 @@
 }
 
 .cartGrossProfitBox {
-  border-top: 3px solid #069a8e;
+  border-top: 3px solid #5428d5;
   margin: 1vmax 4vmax;
   box-sizing: border-box;
   padding: 2vmax 0;
@@ -110,10 +110,9 @@
 .checkOutBtn {
   display: flex;
   justify-content: flex-end;
-  
 }
 .checkOutBtn > button {
-  background-color: #069a8e;
+  background-color: #5428d5;
   color: white;
   border: none;
   padding: 0.8vmax 4vmax;
@@ -122,15 +121,15 @@
   margin: 1vmax 4vmax;
   cursor: pointer;
   border-radius: 30px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
- transition: all 0.5s;
-}
- 
-.checkOutBtn > button:hover{
-  background-color: #005555;
-   transform: translateY(-.3vmax);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  transition: all 0.5s;
 }
 
+.checkOutBtn > button:hover {
+  background-color: #8269e0;
+  transform: translateY(-0.3vmax);
+}
 
 @media screen and (max-width: 600px) {
   .cartPage {

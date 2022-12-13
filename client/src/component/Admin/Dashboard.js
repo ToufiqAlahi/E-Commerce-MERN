@@ -45,7 +45,7 @@ const Dashboard = () => {
     datasets: [
       {
         label: "TOTAL AMOUNT",
-        backgroundColor: ["#069A8E"],
+        backgroundColor: ["#5428d5"],
         hoverBackgroundColor: ["rgb(197, 72, 49)"],
         data: [0, totalAmount],
       },
@@ -56,8 +56,8 @@ const Dashboard = () => {
     labels: ["Out of Stock", "InStock"],
     datasets: [
       {
-        backgroundColor: ["#00A6B4", "#6800B4"],
-        hoverBackgroundColor: ["#4B5000", "#35014F"],
+        backgroundColor: ["#d12a1a", "#27ae60"],
+        hoverBackgroundColor: ["#00A6B4", "#5428d5"],
         data: [outOfStock, products.length - outOfStock],
       },
     ],
