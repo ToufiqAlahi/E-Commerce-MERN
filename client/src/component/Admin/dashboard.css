@@ -3,7 +3,7 @@
   max-width: 100%;
   display: grid;
   grid-template-columns: 1fr 5fr;
-  position: absolute;
+  /* position: absolute; */
 }
 
 .dashboardContainer {
@@ -31,7 +31,7 @@
   justify-content: center;
 }
 .dashboardSummary > div > p {
-  background-color:#069A8E;
+  background-color: #5428d5;
   color: white;
   font: 300 1.3rem "Roboto";
   text-align: center;
