@@ -7,7 +7,6 @@
   display: flex;
 }
 
-
 .ProductDetails > div {
   width: 100%;
   display: flex;
@@ -93,9 +92,9 @@
   cursor: pointer;
   color: white;
   transition: all 0.5s;
-  background-color: #069a8e;
+  background-color: #5428d5;
   font: 600 0.7vmax "Roboto";
-  letter-spacing: 1.5px; 
+  letter-spacing: 1.5px;
   border-radius: 20px;
   padding: 0.5vmax 2vmax;
   margin: 1vmax;
@@ -104,9 +103,8 @@
 }
 
 .detailsBlock-3-1 > button:last-child:hover {
-  background-color: #005555;
-   transform: scale(1.05);
-  
+  background-color: #8269e0;
+  transform: scale(1.05);
 }
 
 .detailsBlock-3 > p {
@@ -130,9 +128,9 @@
 
 .submitReview {
   border: none;
-  background-color: #069a8e;
+  background-color: #5428d5;
   font: 600 0.7vmax "Roboto";
-  letter-spacing: 1.5px; 
+  letter-spacing: 1.5px;
   border-radius: 20px;
   padding: 0.6vmax 2vmax;
   margin: 1vmax 0;
@@ -143,7 +141,7 @@
   font: "Roboto";
 }
 .submitReview:hover {
-  background-color: #005555;
+  background-color: #8269e0;
   transform: scale(1.1);
 }
 

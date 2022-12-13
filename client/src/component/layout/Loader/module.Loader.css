@@ -1,9 +1,8 @@
-
-.load-main{ background: url(https://www.toptal.com/designers/subtlepatterns/patterns/furley_bg_@2X.png);
+.load-main {
+  background: url(https://www.toptal.com/designers/subtlepatterns/patterns/furley_bg_@2X.png);
   background-size: 100vmax;
-    height: 100vh;
-    display: flex;
-  
+  height: 100vh;
+  display: flex;
 }
 
 .load-container {
@@ -12,7 +11,6 @@
   height: auto;
   transform: scale(1.5);
 }
-
 
 .loading-overlay {
   position: absolute;
@@ -44,7 +42,7 @@
 .loading-anim .border {
   position: absolute;
   border-radius: 50%;
-  border: 3px solid #069a8e;
+  border: 3px solid #5428d5;
 }
 .loading-anim .out {
   top: 15%;
@@ -89,7 +87,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #069a8e;
+  background-color: #5428d5;
   animation: jitter 4s ease-in-out infinite, fade-in-out 4s linear infinite;
 }
 

@@ -6,12 +6,12 @@ import { MdAddShoppingCart } from "react-icons/md";
 import logo from "../../../images/logo.png";
 
 const options = {
-  burgerColorHover: "gold",
+  burgerColorHover: "#5428d5",
   logo,
   logoWidth: "20vmax",
-  navColor1: "#A1E3D8",
+  navColor1: "#b8a9eb",
   logoHoverSize: "20px",
-  logoHoverColor: "gold",
+  logoHoverColor: "#5428d5",
   link1Text: "Home",
   link2Text: "Products",
   link3Text: "Contact",

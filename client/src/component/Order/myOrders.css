@@ -4,12 +4,13 @@
   padding: 0 7vmax;
   box-sizing: border-box;
   background-color: rgb(235, 235, 235);
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  /* margin-bottom: 10vmax; */
 }
 
 #myOrdersHeading {
@@ -23,7 +24,7 @@
 }
 
 .myOrdersTable {
-  background-color: white;
+  background-color:#b8a9eb;
 }
 
 .myOrdersTable div {
@@ -38,11 +39,11 @@
 }
 
 .myOrdersTable a:hover {
-  color: #069a8e;
+  color: #5428d5;
 }
 
 .MuiDataGrid-columnHeader {
-  background-color: #069a8e;
+  background-color: #5428d5;
   padding: 1vmax !important;
 }
 
