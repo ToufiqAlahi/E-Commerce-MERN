@@ -1,10 +1,15 @@
 footer {
   margin-top: 10vmax;
+}
+
+#footer {
+  margin-top: 10vmax;
   padding: 2vmax;
-  background-color: rgba(81, 81, 81, 0.933);
-  color: white;
+  background-color: #e0e0ea;
+  color: black;
   display: flex;
   align-items: center;
+  margin-bottom: -5vmax;
 }
 
 .leftFooter {
@@ -29,31 +34,40 @@ footer {
   cursor: pointer;
 }
 
+.store-logo {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.store-logo:hover,
+.store-logo:focus,
+.store-logo:active {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
 .midFooter {
   width: 60%;
   text-align: center;
 }
 
 .footer-logo {
-  max-width: 25vmax;
-  /* margin-bottom: 4vmax; */
+  max-width: 30vmax;
 }
 
-.midFooter > p {
+.midFooter > div > p {
   max-width: 60%;
+  color: #5428d5;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  margin: 1vmax auto;
+  margin: 2vmax auto;
+  /* margin-top: 50px; */
 }
-
-/* .copyrights{
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    justify-content: center;
-    justify-self: center;
-    margin: auto;
-    
-} */
 
 .rightFooter {
   width: 20%;
@@ -68,11 +82,10 @@ footer {
 }
 
 .profile-link {
-  /* font-size: 4vmax; */
   text-decoration: none;
   margin-left: 5px;
   font-family: "Roboto";
-  color: #069a8e;
+  color: #5428d5;
 }
 
 .rightFooter > a {
@@ -82,8 +95,319 @@ footer {
   color: white;
   transition: all 0.5s;
   margin: 0.5vmax;
+  color: #5428d5;
 }
 
-.rightFooter > a:hover {
-  color: #069a8e;
+.link {
+  --uismLinkDisplay: var(--smLinkDisplay, inline-flex);
+  --uismLinkTextColor: var(--smLinkTextColor);
+  --uismLinkTextColorHover: var(--smLinkTextColorHover);
+
+  display: var(--uismLinkDisplay);
+  color: var(--uismLinkTextColor);
+  position: relative;
+  overflow: hidden;
+
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.link:hover,
+.link:focus,
+.link:active {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+a.link {
+  text-decoration: none;
+}
+
+.link__label {
+  display: block;
+}
+.portfolio-link:hover .link-svg {
+  fill: rgb(255, 255, 255);
+}
+
+.project-link:hover .link-svg {
+  fill: rgb(255, 255, 255);
+}
+
+.link_padding-all {
+  --uismLinkLineWeight: var(--smLinkLineWeight, 2px);
+  --uismLinkLineColor: var(--smLinkLineColor, #000);
+  --uismLinkPadding: var(--smLinkPadding, 5px);
+
+  padding: var(--uismLinkPadding);
+}
+
+.link_padding-all::before,
+.link_padding-all::after {
+  width: 100%;
+  height: var(--uismLinkLineWeight);
+  left: 0;
+}
+
+.link_padding-all::before {
+  top: 0;
+}
+
+.link_padding-all::after {
+  bottom: 0;
+}
+
+.link_padding-all .link__label::before,
+.link_padding-all .link__label::after {
+  width: var(--uismLinkLineWeight);
+  height: 100%;
+  top: 0;
+}
+
+.link_padding-all .link__label::before {
+  left: 0;
+}
+
+.link_padding-all .link__label::after {
+  right: 0;
+}
+
+.link_padding-all::before,
+.link_padding-all::after,
+.link_padding-all .link__label::before,
+.link_padding-all .link__label::after {
+  content: "";
+  background-color: var(--uismLinkLineColor);
+  position: absolute;
+  opacity: 0;
+
+  will-change: transform, opacity;
+  transition-property: transform, opacity;
+}
+
+.link_padding-all:hover::before,
+.link_padding-all:hover::after,
+.link_padding-all:hover .link__label::before,
+.link_padding-all:hover .link__label::after {
+  opacity: 1;
+}
+
+.link_padding-bottom {
+  --uismLinkLineWeight: var(--smLinkLineWeight, 2px);
+  --uismLinkLineColor: var(--smLinkLineColor, #000);
+
+  padding-bottom: var(--uismLinkLineWeight);
+  position: relative;
+}
+
+.link_padding-bottom::after {
+  content: "";
+  width: 100%;
+  height: var(--uismLinkLineWeight);
+  background-color: var(--uismLinkLineColor);
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.link_bg {
+  --uismLinkLineColor: var(--smLinkLineColor, #000);
+  --uismLinkTextColorHover: var(--smLinkTextColorHover, #fff);
+  --uismLinkPadding: var(--smLinkPadding, 5px);
+
+  padding: var(--uismLinkPadding);
+  transition: color 0.3s ease-out;
+}
+
+.link_bg::before,
+.link_bg::after {
+  content: "";
+  background-color: var(--uismLinkLineColor);
+  opacity: 0;
+  position: absolute;
+
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out 0.03s;
+}
+
+.link_bg .link__label {
+  position: relative;
+  z-index: 2;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.link_bg:hover::before,
+.link_bg:hover::after {
+  opacity: 1;
+  transition-duration: 0.35s, 0.35s;
+  transition-delay: 0s, 0s;
+}
+
+.link_bg:hover {
+  color: var(--uismLinkTextColorHover);
+}
+
+.link_text::before {
+  content: attr(data-link-text);
+  color: var(--uismLinkTextColorHover);
+  position: absolute;
+}
+
+.link_text::before,
+.link_text .link__label {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.86, 0.6, 0.08, 1.01);
+  transition-duration: 0.3s;
+}
+
+.link_text:hover::before,
+.link_text:hover .link__label {
+  transition-duration: 0.4s;
+}
+
+.link-animation::before,
+.link-animation::after {
+  width: 51%;
+  height: 100%;
+  top: 0;
+}
+
+.link-animation::before {
+  left: 0;
+  transform: translate3d(-100%, 0, 0) rotate(-45deg);
+}
+
+.link-animation::after {
+  right: 0;
+  transform: translate3d(100%, 0, 0) rotate(-45deg);
+}
+
+.link-animation:hover::before,
+.link-animation:hover::after {
+  transform: translate3d(0, 0, 0);
+}
+
+.link {
+  --smLinkPadding: 10px 15px;
+  --smLinkLineWeight: 5px;
+  --smLinkLineColor: #5428d5;
+  --smLinkTextColor: black;
+  --smLinkTextColorHover: #fff;
+}
+
+.link_bg {
+  --smLinkTextColorHover: #fff;
+}
+
+.new_footer_area {
+  background: #e0e0ea;
+}
+
+.new_footer_top {
+  padding: 120px 0px 270px;
+  position: relative;
+  overflow-x: hidden;
+}
+.new_footer_area .footer_bottom {
+  padding-top: 5px;
+  padding-bottom: 50px;
+}
+
+.bottom-text {
+  font-family: "roboto";
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5vmax;
+}
+
+.link-svg {
+  fill: #5428d5;
+}
+
+.social-link {
+  font-weight: 800 !important;
+  font-family: "roboto";
+}
+
+.new_footer_top .footer_bg {
+  position: absolute;
+  bottom: 0;
+  background: url("https://res.cloudinary.com/dkzygdfuu/image/upload/v1669318028/products/ShopZo%20Footer/Shpzo_footer_bg.png")
+    no-repeat scroll center 0;
+  width: 100%;
+  height: 266px;
+}
+
+.new_footer_top .footer_bg .footer_bg_one {
+  background: url("https://res.cloudinary.com/dkzygdfuu/image/upload/v1669318137/products/ShopZo%20Footer/shopzp-footer-car.gif")
+    no-repeat center center;
+  width: 330px;
+  height: 105px;
+  background-size: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 25%;
+  -webkit-animation: vehicle 10s linear infinite;
+  animation: vehicle 8s linear infinite;
+}
+
+.new_footer_top .footer_bg .footer_bg_two {
+  background: url("https://res.cloudinary.com/dkzygdfuu/image/upload/v1669318253/products/ShopZo%20Footer/cyclist.gif")
+    no-repeat center center;
+  width: 88px;
+  height: 100px;
+  background-size: 100%;
+  bottom: 0;
+  right: 40%;
+  position: absolute;
+  -webkit-animation: vehicle 15s linear infinite;
+  animation: vehicle 20s linear infinite;
+}
+
+.new_footer_top .footer_bg .footer_bg_three {
+  background: url("https://res.cloudinary.com/dkzygdfuu/image/upload/v1670802484/products/ShopZo%20Footer/footer-truck.gif")
+    no-repeat center center;
+  width: 450px;
+  height: 150px;
+  background-size: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 70%;
+  -webkit-animation: vehicle 10s linear infinite;
+  animation: vehicle 15s linear infinite;
+}
+
+
+@-moz-keyframes vehicle {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes vehicle {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes vehicle {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
 }
