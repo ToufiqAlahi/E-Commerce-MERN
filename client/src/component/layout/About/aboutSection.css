@@ -3,21 +3,18 @@
   padding: 0px;
 }
 .aboutSection {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
   max-width: 100%;
   background-color: white;
   display: grid;
   grid-template-columns: 4fr 4fr;
-  position: fixed;
+  /* position: fixed; */
+  /* margin-bottom: 50vmax !important; */
 }
 
 .aboutSectionGradient {
-  background-image: linear-gradient(
-    to top right,
-    #ace2d9,
-   #024747
-  );
+  background-image: linear-gradient(to top right, #ace2d9, #024747);
 }
 
 .aboutSectionContainer {
@@ -37,9 +34,9 @@
 
 .aboutSectionContainer > h1 {
   font: 400 3vmax "Roboto";
-  color: #069a8e;
+  color: #5428d5;
   margin: 2vmax;
-  border-bottom: #069A8E 1px solid;
+  border-bottom: #5428d5 1px solid;
 }
 
 .aboutSectionContainer > div {
@@ -100,7 +97,7 @@
 }
 
 .linkedInSvgIcon {
-  color: #007bb6;
+  color: #00aeff;
 }
 
 /**Icon Hover Effect 1**/
@@ -137,7 +134,7 @@
   display: inline-block;
   width: 100px;
   height: 100px;
-  background: #c5ddd9;
+  background: #9d83ec5e;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
@@ -153,7 +150,8 @@
 
 .hover-effect1 ul li:hover a {
   border-radius: 50%;
-  background: #069A8E;
+  background: #5428d5;
+  color: white;
   -moz-transform: rotate(360deg);
   -webkit-transform: rotate(360deg);
   -o-transform: rotate(360deg);
@@ -210,5 +208,3 @@
 }
 
 /* * ================================================= */
-
-
