@@ -92,7 +92,7 @@ https://user-images.githubusercontent.com/45028631/207233861-53cd1d67-dd4c-446b-
 <div align="center" style="text-align: center">
         <img style="width:70%" src="https://res.cloudinary.com/dkzygdfuu/image/upload/v1670897514/products/Snapshots/contact-page.png" alt="Shopzo Screenshot"/>
 <!--         Contact Page -->
-  <p style="text-align: center">footer</p>
+  <p style="text-align: center">Contact Page</p>
       </div>
 </div>
 <br> 
